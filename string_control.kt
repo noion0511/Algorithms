@@ -5,7 +5,7 @@ class Solution {
         var number = 0 //4 또는 6인지 확인할 변수
         
         for(i in 0..s_length-1){// 0부터 s_length까지 구하면 인덱스를 벗어나서 하나를 빼줌
-            if(s_array[i] in '0'..'9') {//문자로 들어오기 때문에 0..9가 아닌 '0'..'9'
+            if(s_array[i] in '0'..'9') {//문자로 들어오기 때문에 0..9가 아닌 '0'..'9' in으로 포함되는 지 확인 가능
                 number = number + 1
             }
         }
