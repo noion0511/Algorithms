@@ -18,6 +18,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RandomE/RandomE_Server" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -45,9 +46,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="664" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1611203112001">
+    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1611821083411">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="664" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611203112001" />
+    <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611821083411" />
+    <state x="664" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1611820952489">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="664" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1611820952489" />
   </component>
 </project>
