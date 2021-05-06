@@ -23,7 +23,13 @@
  ### 다형성(Polymorphism)
   - 다형성은 상속을 통해 기능을 확장하거나 변경하는 것을 가능하게 해준다.
   - 이를 통해 코드의 재사용, 코드 길이 감소가 되어 유지보수가 용이하도록 도와준다.
-  Ex) public class OverloadingTest{
+  
+  다형성의 장점?
+  -> 같은 이름의 속성을 유지함으로서, 속성을 사용하기 위한 인터페이스를 유지하고, 메서드 이름을 낭비하지 않는다는 것이다.
+     예를 들어, 고양이와 사자의 울음소리를 호출하기 위해서 각 객체에서 roar() 메서드를 호출하면 된다.
+     roraCat(), roarLion()으로 각각을 정의할 필요가 없다는 것이다. API가 많아질수록 복잡성은 증가하기 때문에 다형성은 유용하다.
+  
+  Ex) public class OverloadingTest{ //overloading
   
     public void test(){
       System.out.println("사용자 없음");
@@ -37,5 +43,42 @@
       System.out.println("사용자 이름 = "+name+" , 사용료 = "+money);
     }
   }
+ 
+ 오버로딩과 오버라이딩?
+ -> 오버라이딩
+  - 부모 클래스에서 상속받은 자식 클래스에서 부모클래스에서 만들어진 메서드를 자식 클래스에서 자신의 입맛대로 다시 재정의해서 사용하는 것을 말한다.
+ -> 오버로딩
+  - 같은 이름의 메서드를 사용하지만 메서드마다 다른 용도로 사용되며 그 결과물도 다르게 구현할 수 있게 만드는 개념이다.
+  - 오버로딩이 가능하려면 메서드끼리 이름은 같지만 매개변수의 갯수나 데이터 타입이 다르면 오버로딩이 적용된다. 메서드 이름이 같아도 에러가 생기지않는다.
+
+  Ex) public class Employee{ //overridding
+
+    public String name;
+    public int age;
+
+    public void print(){
+      System.out.println("사원의 이름 = "+this.name+", 나이 = "+this.age);
+    }
+  }
+
+  //Emplyee 상속
+  public class Manager extends Employee{
+
+    String jobOfManage;
+
+    //overriding  Employee의 pirnt() 메소드 오버라이딩
+    public void print(){
+      System.out.println("사원의 이름 = "+this.name+", 나이 = "+this.age);
+      System.out.println("관리자 "+this.name+"은 "+this.jobOfManage+" 담당입니다.");
+    }
+  }
+
+ ### 상속성, 재사용(Inheritance)
+ - 상속이란 기존 상위클래스에 근거하여 새롭게 클래스와 행위를 정의할 수 있게 도와주는 개념이다.
+ - 기존 클래스에 기능을 가져와 재사용할 수 있으면서도 동시에 새롭게 만든 클래스에 새로운 기능을 추가할 수 있게 만들어 준다.
+ 
+ 상속이 필요한 이유?
+  -> 상속이 필요한 이유는 코드의 중복을 없애기 위함이다. 상속 관계를 맺으면 자식 객체를 생성할 때 부모 클래스의 속성들을 자동으로 물려 받는다. 
+     따라서 자식 클래스에서 또 정의할 필요가 없다. 이것이 상속이 필요한 이유이다.
   
   
