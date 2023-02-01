@@ -49,16 +49,18 @@ public class Main {
 	private static void brute_force(int min, int max) {
 		for (int i = min; i <= max; i++) {
 			result = countTime(i);
-
-			System.out.println(result[0] + " " + result[1]);
-
-			if (time > result[0] && result[2] > 0) {
-				time = result[0];
-				height = result[1];
-			} else if (time == result[0] && height < result[1] && result[2] > 0) {
-				time = result[0];
-				height = result[1];
+			
+			if (result[2] > 0) {
+				if (time > result[0]) {
+					time = result[0];
+					height = result[1];
+				} else if (time == result[0] && height < result[1]) {
+					time = result[0];
+					height = result[1];
+				}
 			}
+
+//			System.out.println(result[0] + " " + result[1]);
 		}
 	}
 
@@ -77,11 +79,11 @@ public class Main {
 				if (value > height) {
 					time += (value - height) * 2;
 					block += value - height;
-					System.out.println("1 -> time : " + time + " block : " + block + "height : " + height);
+//					System.out.println("1 -> time : " + time + " block : " + block + " height : " + height);
 				} else {
 					time += height - value;
-					block += height - value;
-					System.out.println("2 -> time : " + time + " block : " + block);
+					block -= height - value;
+//					System.out.println("2 -> time : " + time + " block : " + block);
 				}
 			}
 		}
@@ -90,7 +92,6 @@ public class Main {
 			result[0] = Integer.MAX_VALUE;
 			return result;
 		}
-		// block이 없을 때, 검사를 한번 해봐야할듯
 
 		result[0] = time;
 		result[1] = height;
