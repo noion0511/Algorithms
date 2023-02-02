@@ -37,8 +37,13 @@ public class Main {
 			}
 		}
 
-		brute_force(min, max);
-
+		if(min == max) {
+			time = 0;
+			height = min;
+		} else {
+			brute_force(min, max);
+		}
+		
 		bw.write(Integer.toString(time) + " " + Integer.toString(height));
 
 		bw.flush();
@@ -50,7 +55,7 @@ public class Main {
 		for (int i = min; i <= max; i++) {
 			result = countTime(i);
 			
-			if (result[2] > 0) {
+			if (result[2] >= 0) {
 				if (time > result[0]) {
 					time = result[0];
 					height = result[1];
@@ -59,8 +64,6 @@ public class Main {
 					height = result[1];
 				}
 			}
-
-//			System.out.println(result[0] + " " + result[1]);
 		}
 	}
 
@@ -79,18 +82,12 @@ public class Main {
 				if (value > height) {
 					time += (value - height) * 2;
 					block += value - height;
-//					System.out.println("1 -> time : " + time + " block : " + block + " height : " + height);
 				} else {
 					time += height - value;
 					block -= height - value;
-//					System.out.println("2 -> time : " + time + " block : " + block);
 				}
+				
 			}
-		}
-
-		if (block < 0) {
-			result[0] = Integer.MAX_VALUE;
-			return result;
 		}
 
 		result[0] = time;
